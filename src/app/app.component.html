@@ -1,10 +1,16 @@
 <main class="main">
-
-  <section class="filters">
-    <input type="text" (keyup)="setCarts()" [(ngModel)]="search">
+  <!-- <section class="filters">
+    <input type="text" (keyup)="setCarts()" [(ngModel)]="search" />
     <button (click)="setSort(0)">name</button>
     <button (click)="setSort(1)">price</button>
-  </section>
+  </section> -->
+
+  <app-filters
+    [search]="search"
+    [historyClick]="historyClick"
+    (setCarts)="setCarts($event)"
+    (setSort)="setSort($event)"
+  ></app-filters>
 
   <app-carts [carts]="carts" [filterCarts]="filterCarts"></app-carts>
 </main>
