@@ -1,0 +1,4 @@
+<section (click)="update()" class="carts">
+    <div *ngFor="let cart of carts" [innerHTML]="cart | renderCart" class="cart">
+    </div>
+</section>
