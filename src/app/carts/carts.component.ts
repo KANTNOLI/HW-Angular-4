@@ -6,10 +6,10 @@ import { RenderCarts } from '../../assets/RenderArrayCarts.module';
   selector: 'app-carts',
   standalone: false,
   templateUrl: './carts.component.html',
-  styleUrl: './carts.component.css'
+  styleUrl: './carts.component.css',
 })
 export class CartsComponent {
-  @Input() carts: Cart[] = []
-  @Input() filterCarts: Cart[] = []
+  @Input() search: string = '';
+  @Input() carts: Cart[] = [];
+  @Input() filterCarts: Cart[] = [];
 }
- 

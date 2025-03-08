@@ -1,4 +1,8 @@
 <section class="carts">
-    <div *ngFor="let cart of filterCarts" [innerHTML]="cart | renderCart" class="cart">
-    </div>
+  <div
+    *ngFor="let cart of filterCarts"
+    [innerHTML]="cart | renderCart"
+    class="cart"
+    [ngClass]="{ cartsBack: search === cart.title}"
+  ></div>
 </section>

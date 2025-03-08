@@ -32,11 +32,10 @@ export class AppComponent {
   }
 
   setCarts(search: string) {
-    console.log(11);
-
+    this.search = search;
     this.filterCarts = this.carts.filter((cart) =>
-      cart.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      cart.title.toLocaleLowerCase().includes(this.search.toLocaleLowerCase())
     );
-    console.log(this.filterCarts);
+
   }
 }
