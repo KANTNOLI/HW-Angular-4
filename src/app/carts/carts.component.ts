@@ -1,18 +1,6 @@
-import { Component } from '@angular/core';
+import { Input, Component } from '@angular/core';
 import { Cart } from '../../assets/Interfaces/Carts.interface';
 import { RenderCarts } from '../../assets/RenderArrayCarts.module';
-
-class CartRender {
-  public original: Cart[] = RenderCarts(6);
-  public filter: Cart[] = this.original;
-
-  setFilter(value: Cart[]) {
-    this.filter = value
-  }
-}
-
-
-export let Carts = new CartRender
 
 @Component({
   selector: 'app-carts',
@@ -21,13 +9,6 @@ export let Carts = new CartRender
   styleUrl: './carts.component.css'
 })
 export class CartsComponent {
-  carts: Cart[] = Carts.filter
-
-  update() {
-    this.carts = Carts.filter
-  }
+  @Input() carts: Cart[] = []
+  @Input() filterCarts: Cart[] = []
 }
-
-
-console.log(Carts);
-

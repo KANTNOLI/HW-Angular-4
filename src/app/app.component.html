@@ -1,6 +1,12 @@
 <main class="main">
-  <app-filters></app-filters>
-  <app-carts></app-carts>
+
+  <section class="filters">
+    <input type="text" (keyup)="setCarts()" [(ngModel)]="search">
+    <button (click)="setSort(0)">name</button>
+    <button (click)="setSort(1)">price</button>
+  </section>
+
+  <app-carts [carts]="carts" [filterCarts]="filterCarts"></app-carts>
 </main>
 
-<!-- Чут чут  мало контента, но постарался заюзать классы, интерф, пайпы, ngs --> 
+<!-- Чут чут  мало контента, но постарался заюзать классы, интерф, пайпы, ngs -->
